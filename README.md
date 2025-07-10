@@ -41,10 +41,9 @@ build using basic components to mat SFMC's Content Builder logic.
 
 ## Files of Interest
 
-- [`journey-map.md`](journey-map.md) - Simulated journey flow with logic steps
+- [`journey-map.md`](docs/journey-map.md) - Simulated journey flow with logic steps
 - [`emails/`](emails/) - HTML emails, all responsive and QA-ready
-- [`segmentation-rules.md`](segmentation-rules.md) - Audience logic based on behavior & attributes
-- [`personalization-rules.md`](personalization-rules.md) - Conditional logic for dynamic content
+- [`personalization-rules.md`](docs/personalization-rules.md) - Conditional logic for dynamic content
 
 ---
 

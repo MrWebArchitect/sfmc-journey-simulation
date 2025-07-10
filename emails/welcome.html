@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Welcome to Velocity Motors</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-spacing: 0;
+            font-family: Arial, sans-serif;
+            color: #333333;
+        }
+
+        img {
+            display: block;
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .main {
+            background-color: #ffffff;
+        }
+
+        .header,
+        .footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background-color: #111827;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin: 0 0 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .cta-wrapper {
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        .cta-button {
+            background-color: #e11d48;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 8px;
+            mso-padding-alt: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- AMPscript block -->
+    %%[
+    VAR @CTA
+    IF @VehicleInterest == "Vanguard ST" THEN
+    SET @CTA = "Book Your Vanguard Test Drive"
+    ELSEIF @VehicleInterest == "Atlas Range" THEN
+    SET @CTA = "Explore SUV Specials"
+    ELSE
+    SET @CTA = "Schedule Your Test Drive"
+    ENDIF
+    ]%%
+
+    <!-- Email Wrapper -->
+    <table role="presentation" width="100%" bgcolor="#f4f4f4" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table class="container" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <img src="https://via.placeholder.com/200x50?text=Velocity+Motors"
+                                alt="Velocity Motors Logo" width="200" height="50" />
+                        </td>
+                    </tr>
+
+                    <!-- Hero Section -->
+                    <tr>
+                        <td class="hero">
+                            <h1>Welcome to Velocity Motors!</h1>
+                            <p>You’re one step closer to your new %%=v(@VehicleInterest)=%%.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Body Content -->
+                    <tr>
+                        <td class="content">
+                            <p>Thanks for building your dream car, %%=v(@FirstName)=%%!</p>
+                            <p>Your local Velocity dealership is ready to schedule a test drive and show you all that
+                                the %%=v(@VehicleInterest)=%% has to offer.</p>
+                        </td>
+                    </tr>
+
+                    <!-- CTA Section -->
+                    <tr>
+                        <td class="cta-wrapper">
+                            <!--[if mso]>
+            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
+              href="%%=RedirectTo(@CTA_URL)=%%"
+              style="height:50px;v-text-anchor:middle;width:280px;" arcsize="12%" stroke="f" fillcolor="#e11d48">
+              <w:anchorlock/>
+              <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">
+                %%=v(@CTA)=%%
+              </center>
+            </v:roundrect>
+            <![endif]-->
+                            <![if !mso]>
+                            <a href="%%=RedirectTo(@CTA_URL)=%%" class="cta-button">
+                                %%=v(@CTA)=%%
+                            </a>
+                            <![endif]>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer" style="font-size: 12px; color: #999999;">
+                            Velocity Motors • 1234 Auto Drive • Motor City, USA<br />
+                            <a href="#" style="color: #999999; text-decoration: underline;">Unsubscribe</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
