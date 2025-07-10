@@ -29,6 +29,8 @@ Fields:
 - Content: Confirm submission, showcase key features of configured vehicle
 - CTA: "Schedule a test Drive"
 
+---
+
 ### Step 2: Wait 2 Days
 
 ---
