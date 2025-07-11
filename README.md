@@ -18,7 +18,7 @@ This project simulates a full coustomer journey using Salesforce Marketing Cloud
 
 ## Journey Overview
 
-The journey include the following email steps: 
+The journey includes the following email steps: 
 
 1. **Welcome Email**
 2. **Onboarding Tips**
